@@ -128,7 +128,7 @@ var docsetMap = {
       'marionette', 'meteor', 'sproutcore', 'moo', 'prototype', 'bootstrap',
       'foundation', 'lodash', 'underscore', 'ember', 'sencha', 'extjs',
       'titanium', 'knockout', 'zepto', 'yui', 'd3', 'svg', 'dojo', 'coffee',
-      'nodejs', 'express', 'chai', 'html', 'css', 'cordova', 'phonegap',
+      'nodejs', 'express', 'grunt', 'mongoose', 'chai', 'html', 'css', 'cordova', 'phonegap',
       'unity3d']
   },
 
@@ -220,6 +220,12 @@ var docsetMap = {
     scopes: ['ruby.source', 'rails.ruby.source', 'haml.text'],
     keys: ['ruby', 'rubygems', 'rails']
   },
+  
+  rust: {
+    extensions: ['rs', 'rc'],
+    scopes:['rust.source'],
+    keys: ['rust']
+  }
 
   sass: {
     extensions: ['sass', 'scss'],
