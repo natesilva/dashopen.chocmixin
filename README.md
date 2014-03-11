@@ -22,6 +22,6 @@ From the menu within Chocolat, choose `Actions` > `Install Mixins…`.
 
 ## Usage
 
-Place the cursor over the word to be looked up and press <kbd>Ctrl</kbd>-<kbd>H</kbd> for a context-sensitive search, or <kbd>Ctrl</kbd>-<kbd>Opt</kbd>-<kbd>H</kbd> to search all documentation in Dash.
+Place the cursor over the word to be looked up and press <kbd>Ctrl</kbd>-<kbd>H</kbd> for a context-sensitive search, or <kbd>Ctrl</kbd>-<kbd>Opt</kbd>-<kbd>H</kbd> to search all documentation in your current Dash profile.
 
 Alternatively, use the menu option `Go` > `Search in Dash`.

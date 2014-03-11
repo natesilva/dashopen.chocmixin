@@ -1,8 +1,8 @@
 /* global Hooks, Recipe, Document */
 
 var path = require('path')
-  , getKeysForFileType = require('./getKeysForFileType.js')
   , spawn = require('child_process').spawn
+  , docsetMap = require('./docsetMap.json')
   ;
 
 function openUrl(url) {
@@ -18,6 +18,47 @@ function openUrl(url) {
           throw error;
       }
   });
+}
+
+//
+// Given a Chocolat scope, and the file extension, guess what kind
+// of file it is and return the corresponding Dash search keys.
+//
+function getKeysForFileType(scope, extension) {
+  var byExtension = Object.keys(docsetMap).filter(function(key) {
+    if (!extension) { return false; }
+    return (docsetMap[key].extensions.indexOf(extension) !== -1);
+  });
+
+  var byScope = Object.keys(docsetMap).filter(function(key) {
+    return (docsetMap[key].scopes.indexOf(scope) !== -1);
+  });
+
+  // prefer exact extension matches
+  if (byExtension.length === 1) {
+    return docsetMap[byExtension[0]].keys.join(',');
+  }
+
+  // next, exact scope matches
+  if (byScope.length === 1) {
+    return docsetMap[byScope[0]].keys.join(',');
+  }
+
+  // next, look for a single match in both extensions and scope
+  var inBoth = byExtension.filter(function(key) {
+    return (byScope.indexOf(key) !== -1);
+  });
+
+  if (inBoth.length === 1) {
+    return docsetMap[inBoth[0]].keys.join(',');
+  }
+
+  // punt
+  if (byExtension.length) {
+    return docsetMap[byExtension[0]].keys.join(',');
+  } else if (byScope.length) {
+    return docsetMap[byScope[0]].keys.join(',');
+  }
 }
 
 Hooks.addMenuItem('Go/Search in Dash', 'ctrl-alt-h', function() {
