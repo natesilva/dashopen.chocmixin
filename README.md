@@ -18,7 +18,7 @@ This simple Mixin opens the Dash documentation browser and looks up the word cur
 
 ## Installing
 
-From the menu within Chocolat, choose `Actions` > `Install Mixins…`.
+From the menu within Chocolat, choose `Actions` > `Install Mixins…` and select **`dashopen`**.
 
 ## Usage
 
