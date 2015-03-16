@@ -6,7 +6,7 @@ var path = require('path')
   ;
 
 function openUrl(url) {
-  var child = spawn('open', [url]);
+  var child = spawn('open', ['-g', url]);
   var errorText = '';
   child.stderr.setEncoding('utf8');
   child.stderr.on('data', function (data) {
