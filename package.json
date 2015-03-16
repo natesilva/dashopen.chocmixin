@@ -2,9 +2,10 @@
   "author": "Nate Silva <nate@natesilva.com> (github.com/natesilva)",
   "name": "dashopen.chocmixin",
   "description": "A mixin for the Chocolat text editor that opens the Dash documentation browser.",
-  "version": "2.0.4",
+  "version": "2.0.5",
   "repository": {
-    "url": ""
+    "type": "git",
+    "url": "https://github.com/natesilva/dashopen.chocmixin.git"
   },
   "dependencies": { },
   "devDependencies": {},
